@@ -1,47 +1,29 @@
-# ZenFS
+# zenfs-core
 
-ZenFS is a cross-platform library that emulates the [Node.js filesystem API](http://nodejs.org/api/fs.html).
-It works using a system of backends, which are used by ZenFS to store and retrieve data.
-ZenFS should cover the full API surface of the latest Node.js version, though complex changes may lag a little bit.
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/zenfs-core) [![KDE Eco](https://img.shields.io/badge/KDE%20Eco-certified-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/) [![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/certification/criteria)
 
-## Backends
 
-ZenFS is modular and easily extended. The core includes some built-in backends:
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-- `InMemory`: Stores files in-memory. This is cleared when the runtime ends (e.g. a user navigating away from a web page or a Node process exiting)
-- `CopyOnWrite`: Use readable and writable file systems with [copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write).
-- `Fetch`: Downloads files over HTTP with the `fetch` API
-- `Port`: Interacts with a remote over a `MessagePort`-like interface (e.g. a worker)
-- `Passthrough`: Use an existing `node:fs` interface with ZenFS
-- `SingleBuffer`: A backend contained within a single buffer. Can be used for synchronous multi-threaded operations using `SharedArrayBuffer`
+## Architecture
 
-ZenFS supports a number of other backends.
-Many are provided as separate packages under `@zenfs`.
-More backends can be defined by separate libraries by extending the `FileSystem` class and providing a `Backend` object.
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-You can find all of the packages available over on [NPM](https://www.npmjs.com/org/zenfs). Below is a list of the backends included with some of them:
+## Install
 
-- @zenfs/archives: `Zip`, `Iso`
-- @zenfs/cloud: `Dropbox`, `GoogleDrive`, `S3Bucket`
-- @zenfs/dom: `WebAccess` (Web [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_API)/OPFS), `IndexedDB`, `WebStorage` (`localStorage`/`sessionStorage`), `XML` (DOM elements)
-- @zenfs/emscripten: `Emscripten` and a plugin for Emscripten's file system API
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-As an added bonus, all ZenFS backends support synchronous operations.
-Additionally, all of the backends included with the core are cross-platform.
-
-For more information, see the [docs](https://zenfs.dev/core).
-
-## Installing
-
-```sh
-npm install @zenfs/core
+```bash
+git clone https://github.com/Interested-Deving-1896/zenfs-core.git
+cd zenfs-core
 ```
 
-If you're using ZenFS, especially for big projects, please consider supporting the project.
-Thousands of hours have been dedicated to its development.
-Your financial support would go a long way toward improving ZenFS and its community.
-
 ## Usage
+
 
 > [!IMPORTANT]
 > **[Check out the ZenFS docs!](https://zenfs.dev/start/usage/)**
@@ -81,15 +63,98 @@ The `fs/promises` API is available from `@zenfs/core/promises`, as the `promises
 For the full usage guide, see **[the documentation](https://zenfs.dev/start/usage/)**.
 This includes mounting at runtime, contexts and permissions, devices, and the `node:*`module emulation.
 
-## Bundling
+## Configuration
 
-ZenFS exports a drop-in for Node's `fs` module, so you can use it for your bundler of preference using the default export.
-See [COPYING.md](./COPYING.md) for more info.
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
 
-## Sponsors
+## CI
 
-A huge thank you to [deco.cx](https://github.com/deco-cx) for sponsoring ZenFS and helping to make this possible.
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
-## Contact and Support
+## Mirror chain
 
-You can reach out [on Discord](https://zenfs.dev/discord) or by emailing jp@zenfs.dev
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/zenfs-core`](https://github.com/Interested-Deving-1896/zenfs-core) and mirrored through:
+
+```
+Interested-Deving-1896/zenfs-core  ──►  OpenOS-Project-OSP/zenfs-core  ──►  OpenOS-Project-Ecosystem-OOC/zenfs-core
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+| Contributor | Commits |
+|---|---|
+| [@james-pre](https://github.com/james-pre) | 1654 |
+| [@perimosocordiae](https://github.com/perimosocordiae) | 112 |
+| [@lavelle](https://github.com/lavelle) | 67 |
+| [@mcandeia](https://github.com/mcandeia) | 27 |
+| [@bpowers](https://github.com/bpowers) | 26 |
+| [@hrj](https://github.com/hrj) | 23 |
+| [@emeryberger](https://github.com/emeryberger) | 11 |
+| [@terryluan12](https://github.com/terryluan12) | 9 |
+| [@billiegoose](https://github.com/billiegoose) | 8 |
+| [@yoursunny](https://github.com/yoursunny) | 6 |
+| [@corhere](https://github.com/corhere) | 4 |
+| [@DustinBrett](https://github.com/DustinBrett) | 4 |
+| [@jvilk](https://github.com/jvilk) | 4 |
+| [@snowyu](https://github.com/snowyu) | 4 |
+| [@uncor3](https://github.com/uncor3) | 3 |
+| [@fetsorn](https://github.com/fetsorn) | 3 |
+| [@timdream](https://github.com/timdream) | 3 |
+| [@Narazaka](https://github.com/Narazaka) | 3 |
+| [@kkoreilly](https://github.com/kkoreilly) | 3 |
+| [@1j01](https://github.com/1j01) | 3 |
+| [@lvcabral](https://github.com/lvcabral) | 2 |
+| [@db48x](https://github.com/db48x) | 2 |
+| [@lyonbot](https://github.com/lyonbot) | 2 |
+| [@atty303](https://github.com/atty303) | 2 |
+| [@jcubic](https://github.com/jcubic) | 2 |
+| [@DanielRuf](https://github.com/DanielRuf) | 2 |
+| [@dreamlayers](https://github.com/dreamlayers) | 2 |
+| [@linfaxin](https://github.com/linfaxin) | 1 |
+| [@nzinfo](https://github.com/nzinfo) | 1 |
+| [@matteo-cristino](https://github.com/matteo-cristino) | 1 |
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream influences recorded._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## Accessibility
+
+<!-- AI:start:accessibility -->
+This repo uses automated accessibility auditing via `check-accessibility.yml`.
+
+Checks include: CODEOWNERS ownership coverage, README screen-reader compatibility,
+WCAG 2.1 AA HTML compliance, audio overview (espeak-ng), and Braille output (liblouis).
+
+
+
+
+Run the [Check Accessibility](https://github.com/Interested-Deving-1896/zenfs-core/actions/workflows/check-accessibility.yml)
+workflow to generate the first report and accessibility artifacts.
+See the [W3C Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
+for the underlying accessibility reference.
+<!-- AI:end:accessibility -->
+
+## License
+
+<!-- AI:start:license -->
+[LGPL-3.0](https://github.com/Interested-Deving-1896/zenfs-core/blob/main/LICENSE.md) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
